@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp.views import sms_webhook
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('webhook/', sms_webhook, name='sms_webhook'),
+    path('receivemessage/', sms_webhook, name='sms_webhook'),
 ]
