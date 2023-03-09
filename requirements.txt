@@ -1,0 +1,21 @@
+asgiref==3.6.0
+autopep8==1.7.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+charset-normalizer==3.0.1
+distlib==0.3.6
+Django==4.1.7
+filelock==3.8.0
+idna==3.4
+lxml==4.9.1
+platformdirs==2.5.2
+psycopg2-binary==2.9.3
+pycodestyle==2.9.1
+PyJWT==2.6.0
+python-decouple==3.8
+pytz==2022.7.1
+requests==2.28.2
+sqlparse==0.4.3
+toml==0.10.2
+twilio==7.16.4
+urllib3==1.26.14
+virtualenv==20.16.4
