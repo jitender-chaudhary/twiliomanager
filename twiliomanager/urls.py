@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import create_number
+from myapp.views import PhoneNumberView
 
 
 urlpatterns = [
-    path('create_number/', create_number, name='create_number'),
+   path('buy-phone-number/', PhoneNumberView.as_view(), name='buy-phone-number'),
 ]
