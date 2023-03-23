@@ -1,15 +1,15 @@
 
 import requests
-from django.http import HttpResponse
-from decouple import config
-from twilio.twiml.messaging_response import MessagingResponse
+from rest_framework import views
+from rest_framework.response import Response
+from .service import PhoneNumberService
 
 
-def sms_webhook(request):
-    incoming_number = request.POST.get('From')
-    message_body = request.POST.get('Body')
-    
-    twiml_response = MessagingResponse()
-    twiml_response.message("Thank you for your message!")
-    
-    return HttpResponse(str(twiml_response))
+class IncomingSMSView(views.APIView):
+    def post(self, request) -> Response:
+        service = PhoneNumberService()
+        from_number = request.data['From']
+        to_number = request.data['To']
+        body = request.data['Body']
+        service.handle_incoming_sms(from_number, to_number, body)
+        return Response(status=200)
